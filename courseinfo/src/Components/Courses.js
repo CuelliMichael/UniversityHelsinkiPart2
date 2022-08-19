@@ -8,7 +8,7 @@ export const Courses = ({courses}) => {
             {
                 courses &&
                 courses.map(
-                    course => <Course course={course} />
+                    course => <Course key={course.id} course={course} />
                 )
             }
         </>
