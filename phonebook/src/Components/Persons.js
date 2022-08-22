@@ -1,6 +1,6 @@
+import { SinglePerson } from "./SinglePerson";
 
-
-export const Persons = ({ persons, filter_by_name }) => {
+export const Persons = ({ persons, filter_by_name, onReload }) => {
 
     const filtered_value = persons.filter(
         item => item.name.includes(filter_by_name)
@@ -11,7 +11,7 @@ export const Persons = ({ persons, filter_by_name }) => {
             {
                 filtered_value &&
                 filtered_value.map(
-                    item => <div key={item.id}>{item.name} {item.number}</div>
+                    item => <SinglePerson key={item.id} person={item} onReload={onReload} />
                 )
             }
         </div>
